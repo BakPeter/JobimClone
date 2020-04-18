@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/cornered_view">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/cornered_frame"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_view_dialog_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/permission_rational_dialog_title_layout_top_margins"
+                android:text="@string/permission_rational_dialog_title"
+                android:textAlignment="center"
+                android:textColor="@color/permission_rational_dialog_title_text_color"
+                android:textSize="@dimen/permission_rational_dialog_title_text_size" />
+
+            <TextView
+                android:id="@+id/text_view_dialog_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/permission_rational_dialog_massage_layout_margins"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/permission_rational_dialog_massage_text_color"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_dialog_title"
+                tool:text="הפעולה נכשלה - וודא שהקוד שהזנת תקין ונסה שנית" />
+
+            <Button
+                android:id="@+id/button_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:background="@android:color/transparent"
+                android:text="@string/permission_rational_dialog_button_text"
+                android:textColor="@color/permission_rational_dialog_button_text_color" />
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/dialog_pic" />
+</LinearLayout>

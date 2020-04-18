@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">JobimClone</string>
+
+    <string name="nav_user_default_name">היי אורח!</string>
+    <string name="nav_my_details_text">הפרטים שלי</string>
+    <string name="nav_notification_text">התראות</string>
+    <string name="nav_my_jobs_text">הג\'ובים שלי</string>
+    <string name="nav_find_jobs_text">מצא ג\'ובים</string>
+    <string name="nav_smart_agent_text">הסוכן החכם</string>
+    <string name="nav_information_text">קצת עלינו</string>
+    <string name="nav_add_new_job_text">פרסם ג\'וב חדש</string>
+
+    <string name="portal_text">פורטל</string>
+    <string name="drushim_text">דרושים</string>
+
+    <string name="jobim_english_layout_text">JOBIM</string>
+    <string name="splash_screen_msg">הג\'וב שלך קרוב מתמיד</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="button_delete_last_character">\u232b</string>
+    <string name="digit_0">0</string>
+    <string name="digit_1">1</string>
+    <string name="digit_2">2</string>
+    <string name="digit_3">3</string>
+    <string name="digit_4">4</string>
+    <string name="digit_5">5</string>
+    <string name="digit_6">6</string>
+    <string name="digit_7">7</string>
+    <string name="digit_8">8</string>
+    <string name="digit_9">9</string>
+    <string name="default_country_code">+972</string>
+    <string name="phone_number_hint">בבקשה הזן את מס\' הנייד שלך</string>
+    <string name="registration_rational_msg">כדי למצוא ג\'ובים נבקש ממך את מספר הטלפון שלך</string>
+    <string name="registration_rational_sub_msg">אין לך מה לדאוג! לא יעשה בו שימוש אישי</string>
+    <string name="text_view_next_text">הבא</string>
+    <string name="text_view_licence_text_1">ע\"י התחברות אני מאשר</string>
+    <string name="text_view_licence_text_2"><u>תנאי השימוש</u></string>
+    <string name="show_on_map_menu_item_title">show on map</string>
+    <string name="show_in_list_menu_item_title">show in list</string>
+
+    <string name="permission_rational_dialog_title">ברוכים הבאים ל-JOBIM</string>
+    <string name="permission_rational_dialog_massage">כדי שתוכל/י להנות מהאפליקציה בצורה הטובה ביותר נבקש ממך לאפשר גישה למיקום, לאנשי הקשר ולסטטוס הטלפון</string>
+    <string name="permission_rational_dialog_button_text">אפשר</string>
+    <string name="tern_of_use_tool_bar_title">תקנון</string>
+    <string name="term_of_menu_item_go_back_title">go back</string>
+    <string name="privacy_policy_text">מדיניות פרטיות</string>
+    <string name="term_of_use_text">תנאי שימוש</string>
+    <string name="countries_chooser_tool_bar_title">countries_chooser_tool_bar_title</string>
+
+    <string name="belgium_code">+32</string>
+    <string name="germany_code">+49</string>
+    <string name="hungary_code">+36</string>
+    <string name="israel_code">+972</string>
+    <string name="norway_code">+47</string>
+    <string name="russian_code">+7</string>
+    <string name="singapore_code">+65</string>
+    <string name="thailand_code">+66</string>
+
+    <string name="belgium_country_name">בלגיה</string>
+    <string name="germany_country_name">גרמניה</string>
+    <string name="hungary_country_name">הונגריה</string>
+    <string name="israel_country_name">ישראל</string>
+    <string name="norway_country_name">נורווגיה</string>
+    <string name="russian_country_name">רוסיה</string>
+    <string name="singapore_country_name">סינגפור</string>
+    <string name="thailand_country_name">תאילנד</string>
+    <string name="dialog_register_title">שגיאה</string>
+    <string name="dialog_register_message">לא ניתן לשלוח את הקוד - וודא שהזנת מספר טלפון תקין ונסה שנית</string>
+    <string name="dialog_register_button_text">אישור</string>
+    <string name="change_number_action_text">שינוי מספר</string>
+    <string name="enter_code_text">אנא הזן את הקוד</string>
+    <string name="code_not_received_text">לא קיבלת קוד?</string>
+    <string name="sms_send_message">שלחנו לך SMS עם הקוד למספר:</string>
+    <string name="dialog_error_title">שגיאה</string>
+    <string name="dialog_errer_massage">הפעולה נכשלה - וודא שהקוד שהזנת תקין ונסה שנית</string>
+    <string name="dialog_error_button_text">אישור</string>
+    <string name="dialog_code_send_title">קוד נשלח!</string>
+    <string name="dialog_code_send_message">קוד חדש נשלח בהצלחה</string>
+    <string name="dialog_code_send_button_text">אישור</string>
+
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/jobim_english_layout_text"
+        android:textAlignment="center"
+        android:textColor="@color/jobim_english_text_color"
+        android:textSize="@dimen/jobim_english_text_color" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_view_location"
+        android:layout_width="@dimen/jobim_english_image_view_size"
+        android:layout_height="@dimen/jobim_english_image_view_size"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_location" />
+</RelativeLayout>

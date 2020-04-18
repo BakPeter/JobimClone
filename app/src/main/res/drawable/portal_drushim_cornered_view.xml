@@ -1,0 +1,12 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="@color/colorPrimary" />
+
+    <corners
+        android:bottomLeftRadius="@dimen/portal_drushim_corner_view_radius"
+        android:bottomRightRadius="@dimen/portal_drushim_corner_view_radius"
+        android:topLeftRadius="@dimen/portal_drushim_corner_view_radius"
+        android:topRightRadius="@dimen/portal_drushim_corner_view_radius"/>
+
+</shape>

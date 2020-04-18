@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="countries_names">
+        <item>@string/belgium_country_name</item>
+        <item>@string/germany_country_name</item>
+        <item>@string/hungary_country_name</item>
+        <item>@string/israel_country_name</item>
+        <item>@string/norway_country_name</item>
+        <item>@string/russian_country_name</item>
+        <item>@string/singapore_country_name</item>
+        <item>@string/thailand_country_name</item>
+    </string-array>
+
+    <string-array name="countries_codes">
+        <item>@string/belgium_code</item>
+        <item>@string/germany_code</item>
+        <item>@string/hungary_code</item>
+        <item>@string/israel_code</item>
+        <item>@string/norway_code</item>
+        <item>@string/russian_code</item>
+        <item>@string/singapore_code</item>
+        <item>@string/thailand_code</item>
+    </string-array>
+
+    <array name="countries_flags_ids">
+        <item>@drawable/flag_of_belgium</item>
+        <item>@drawable/flag_of_germany</item>
+        <item>@drawable/flag_of_hungary</item>
+        <item>@drawable/flag_of_israel</item>
+        <item>@drawable/flag_of_norway</item>
+        <item>@drawable/flag_of_russia</item>
+        <item>@drawable/flag_of_singapore</item>
+        <item>@drawable/flag_of_thailand</item>
+    </array>
+
+</resources>

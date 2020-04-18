@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF6600</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="action_bar_text_color">@android:color/white</color>
+
+    <color name="nav_on_click_background_color">#d6d3d3</color>
+    <color name="nav_background_color">@android:color/white</color>
+    <color name="nav_divider_color">@android:color/darker_gray</color>
+
+    <color name="portal_text_color">@android:color/black</color>
+    <color name="drushim_text_color">@android:color/white</color>
+    <color name="drushim_background_color">@color/colorPrimary</color>
+
+    <color name="jobim_english_text_color">@android:color/white</color>
+
+    <color name="splash_screen_msg_text_color">@android:color/white</color>
+
+    <color name="digits_background_color">@android:color/white</color>
+    <color name="digits_text_color">@android:color/black</color>
+
+    <color name="permission_rational_dialog_title_text_color">@android:color/black</color>
+    <color name="permission_rational_dialog_massage_text_color">@android:color/black</color>
+    <color name="permission_rational_dialog_button_text_color">@color/colorPrimary</color>
+
+    <color name="terms_not_chosen_background">@android:color/white</color>
+    <color name="terms_chosen_background">@color/colorPrimary</color>
+    <color name="terms_policy_not_chosen_text_color">@color/colorPrimary</color>
+    <color name="terms_policy_chosen_text_color">@android:color/white</color>
+    <color name="county_item_text_color" >@android:color/black</color>
+
+    <color name="digits_underline_digit_pressed">@color/colorPrimary</color>
+    <color name="digits_underline_digit_not_pressed">@android:color/darker_gray</color>
+
+</resources>

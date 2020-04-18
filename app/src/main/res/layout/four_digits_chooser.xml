@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_view_first_number"
+        android:layout_width="@dimen/text_view_code_verification_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/layout_start_first_end_fourth_digits"
+        android:layout_marginTop="@dimen/code_verification_text_views_layout_margins"
+        android:layout_marginEnd="@dimen/code_verification_text_views_layout_margins"
+        android:layout_marginBottom="@dimen/code_verification_text_views_layout_margins"
+        android:theme="@style/four_digits_style"
+        app:layout_constraintEnd_toStartOf="@+id/text_view_second_number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_underline_1"
+        android:layout_width="@dimen/text_view_code_verification_width"
+        android:layout_height="@dimen/text_view_underline_height"
+        android:layout_marginStart="@dimen/layout_start_first_end_fourth_digits"
+        android:layout_marginTop="@dimen/code_verification_text_views_layout_margins"
+        android:layout_marginEnd="@dimen/code_verification_text_views_layout_margins"
+        android:layout_marginBottom="@dimen/code_verification_text_views_layout_margins"
+        android:background="@color/digits_underline_digit_not_pressed"
+        app:layout_constraintEnd_toStartOf="@+id/text_view_underline_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_first_number" />
+
+
+    <TextView
+        android:id="@+id/text_view_second_number"
+        android:layout_width="@dimen/text_view_code_verification_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/code_verification_text_views_layout_margins"
+        android:theme="@style/four_digits_style"
+        app:layout_constraintEnd_toStartOf="@+id/text_view_third_number"
+        app:layout_constraintStart_toEndOf="@+id/text_view_first_number"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_underline_2"
+        android:layout_width="@dimen/text_view_code_verification_width"
+        android:layout_height="@dimen/text_view_underline_height"
+        android:layout_margin="@dimen/code_verification_text_views_layout_margins"
+        android:background="@color/digits_underline_digit_not_pressed"
+        app:layout_constraintEnd_toStartOf="@+id/text_view_underline_3"
+        app:layout_constraintStart_toEndOf="@+id/text_view_underline_1"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_second_number" />
+
+
+    <TextView
+        android:id="@+id/text_view_third_number"
+        android:layout_width="@dimen/text_view_code_verification_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/code_verification_text_views_layout_margins"
+        android:theme="@style/four_digits_style"
+        app:layout_constraintEnd_toStartOf="@+id/text_view_fourth_number"
+        app:layout_constraintStart_toEndOf="@+id/text_view_second_number"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_underline_3"
+        android:layout_width="@dimen/text_view_code_verification_width"
+        android:layout_height="@dimen/text_view_underline_height"
+        android:layout_margin="@dimen/code_verification_text_views_layout_margins"
+        android:background="@color/digits_underline_digit_not_pressed"
+        app:layout_constraintEnd_toStartOf="@+id/text_view_underline_4"
+        app:layout_constraintStart_toEndOf="@+id/text_view_underline_2"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_third_number" />
+
+
+    <TextView
+        android:id="@+id/text_view_fourth_number"
+        android:layout_width="@dimen/text_view_code_verification_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/code_verification_text_views_layout_margins"
+        android:layout_marginTop="@dimen/code_verification_text_views_layout_margins"
+        android:layout_marginEnd="@dimen/layout_start_first_end_fourth_digits"
+        android:layout_marginBottom="@dimen/code_verification_text_views_layout_margins"
+        android:theme="@style/four_digits_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_view_third_number"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_underline_4"
+        android:layout_width="@dimen/text_view_code_verification_width"
+        android:layout_height="@dimen/text_view_underline_height"
+        android:layout_marginStart="@dimen/code_verification_text_views_layout_margins"
+        android:layout_marginTop="@dimen/code_verification_text_views_layout_margins"
+        android:layout_marginEnd="@dimen/layout_start_first_end_fourth_digits"
+        android:layout_marginBottom="@dimen/code_verification_text_views_layout_margins"
+        android:background="@color/digits_underline_digit_not_pressed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_view_underline_3"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_fourth_number" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

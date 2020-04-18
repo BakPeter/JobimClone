@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutPhoneInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text_view_item_country_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/digits_margins"
+            android:background="@color/digits_background_color"
+            android:paddingStart="@dimen/digits_vertical_padding"
+            android:paddingTop="@dimen/digits_horizontal_padding"
+            android:paddingEnd="@dimen/digits_vertical_padding"
+            android:paddingBottom="@dimen/digits_horizontal_padding"
+            android:text="@string/default_country_code"
+            android:textColor="@color/digits_text_color"
+            android:textSize="@dimen/digits_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_phone_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/digits_margins"
+            android:background="@color/digits_background_color"
+            android:hint="@string/phone_number_hint"
+            android:paddingStart="@dimen/digits_vertical_padding"
+            android:paddingTop="@dimen/digits_horizontal_padding"
+            android:paddingEnd="@dimen/digits_vertical_padding"
+            android:paddingBottom="@dimen/digits_horizontal_padding"
+            android:textAlignment="center"
+            android:textColor="@color/digits_text_color"
+            android:textSize="@dimen/digits_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_item_country_code"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutPhoneInput"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <include layout="@layout/digits_layout"/>
+
+        </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

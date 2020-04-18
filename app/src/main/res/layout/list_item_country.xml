@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="start"
+    android:padding="@dimen/list_item_country_layouts_margin"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/image_view_item_flag"
+        android:layout_width="@dimen/country_item_flag_image_width"
+        android:layout_height="@dimen/country_item_flag_image_height"
+        android:layout_marginStart="@dimen/item_country_margit_start"
+        android:scaleType="fitXY"
+        android:src="@drawable/flag_of_belgium" />
+
+    <TextView
+        android:id="@+id/text_view_item_country_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_country_margit_start"
+        android:theme="@style/country_text_theme" />
+
+    <TextView
+        android:id="@+id/text_view_item_country_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_country_margit_start"
+        android:theme="@style/country_text_theme" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

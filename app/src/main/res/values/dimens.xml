@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="nav_ic_dimens">35dp</dimen>
+    <dimen name="nav_ic_width">@dimen/nav_ic_dimens</dimen>
+    <dimen name="nav_ic_height">@dimen/nav_ic_dimens</dimen>
+    <dimen name="action_bar_text_size">20sp</dimen>
+    <dimen name="nav_view_user_pic_dimens">60dp</dimen>
+    <dimen name="nav_user_profile_pic_padding">16dp</dimen>
+    <dimen name="nav_user_pic_and_name_margin">80dp</dimen>
+    <dimen name="nav_user_pic_margin_end">@dimen/nav_user_pic_and_name_margin</dimen>
+    <dimen name="nav_user_name_margin_end">@dimen/nav_user_pic_and_name_margin</dimen>
+    <dimen name="nav_divider_height">1dp</dimen>
+    <dimen name="nav_image_dimens">30dp</dimen>
+    <dimen name="nav_margin_top">16dp</dimen>
+    <dimen name="nav_inner_vertical_margin">8dp</dimen>
+    <dimen name="nav_inner_horizontal_margin">16dp</dimen>
+    <dimen name="nav_layout_vertical_padding">8dp</dimen>
+    <dimen name="nav_text_view_user_name_size">15sp</dimen>
+    <dimen name="nav_text_view_size">20sp</dimen>
+    <dimen name="nav_inner_padding">16dp</dimen>
+
+    <dimen name="portal_text_size">30sp</dimen>
+    <dimen name="portal_drushim_corner_view_radius">10dp</dimen>
+
+    <dimen name="jobim_english_text_color">50sp</dimen>
+    <dimen name="jobim_english_image_view_size">20dp</dimen>
+
+    <dimen name="splash_screen_portal_include_horizontal_padding">8dp</dimen>
+    <dimen name="splash_screen_msg_text_size">30sp</dimen>
+
+    <dimen name="button_digit_text_size">30sp</dimen>
+    <dimen name="button_digit_height">70dp</dimen>
+    <dimen name="buttons_margin">1dp</dimen>
+    <dimen name="digits_text_size">16sp</dimen>
+    <dimen name="digits_horizontal_padding">16dp</dimen>
+    <dimen name="digits_vertical_padding">24dp</dimen>
+    <dimen name="digits_margins">2dp</dimen>
+    <dimen name="next_text_view_padding">8dp</dimen>
+    <dimen name="next_text_view_text_size">15sp</dimen>
+
+    <dimen name="registration_rational_msg_text_size">15sp</dimen>
+    <dimen name="registration_rational_horizontal_margins">16dp</dimen>
+    <dimen name="rational_msg_corner_view_radius">10dp</dimen>
+    <dimen name="registration_rational_msg_horizontal_padding">16dp</dimen>
+
+    <dimen name="permission_rational_dialog_title_text_size">20sp</dimen>
+    <dimen name="permission_rational_dialog_massage_layout_margins">16dp</dimen>
+    <dimen name="permission_rational_dialog_title_layout_top_margins">16dp</dimen>
+    <dimen name="terms_options_titles_text_size">15sp</dimen>
+    <dimen name="terms_corners_radius">8dp</dimen>
+    <dimen name="terms_stroke_size">2dp</dimen>
+    <dimen name="terms_title_text_size">30sp</dimen>
+    <dimen name="terms_scroll_view_margins">8dp</dimen>
+    <dimen name="recycler_view_countries_line_divider_height">1dp</dimen>
+    <dimen name="country_item_flag_image_width">70dp</dimen>
+    <dimen name="country_item_flag_image_height">30dp</dimen>
+    <dimen name="item_country_margit_start">16dp</dimen>
+    <dimen name="list_item_country_layouts_margin">8dp</dimen>
+    <dimen name="text_view_code_verification_width">50dp</dimen>
+    <dimen name="text_view_underline_height">5dp</dimen>
+    <dimen name="code_verification_text_views_layout_margins">8dp</dimen>
+    <dimen name="msg_send_text_padding_bottom">100dp</dimen>
+    <dimen name="layout_start_first_end_fourth_digits">40dp</dimen>
+
+</resources>

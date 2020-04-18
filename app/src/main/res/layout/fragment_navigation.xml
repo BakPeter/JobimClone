@@ -1,0 +1,295 @@
+<com.bpapps.jobimclone.navigation.NavViewCustomConstrainLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".navigation.NavigationFragment">
+
+    <ImageView
+        android:id="@+id/image_view_user_profile_pic"
+        android:layout_width="@dimen/nav_view_user_pic_dimens"
+        android:layout_height="@dimen/nav_view_user_pic_dimens"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/nav_user_pic_margin_end"
+        android:paddingTop="@dimen/nav_user_profile_pic_padding"
+        android:src="@drawable/pic_user_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_nav_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/nav_user_name_margin_end"
+        android:text="@string/nav_user_default_name"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/nav_text_view_user_name_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_user_profile_pic" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/nav_my_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/nav_margin_top"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_nav_user_name">
+
+        <ImageView
+            android:layout_width="@dimen/nav_image_dimens"
+            android:layout_height="@dimen/nav_image_dimens"
+            android:layout_marginStart="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginTop="@dimen/nav_inner_vertical_margin"
+            android:layout_marginEnd="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginBottom="@dimen/nav_inner_vertical_margin"
+            android:src="@drawable/nav_my_details" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_my_details_text"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/nav_text_view_size" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/nav_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_my_details">
+
+        <ImageView
+            android:layout_width="@dimen/nav_image_dimens"
+            android:layout_height="@dimen/nav_image_dimens"
+            android:layout_marginStart="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginTop="@dimen/nav_inner_vertical_margin"
+            android:layout_marginEnd="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginBottom="@dimen/nav_inner_vertical_margin"
+            android:src="@drawable/nav_notification" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_notification_text"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/nav_text_view_size" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/nav_my_jobs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_notification">
+
+        <ImageView
+            android:layout_width="@dimen/nav_image_dimens"
+            android:layout_height="@dimen/nav_image_dimens"
+            android:layout_marginStart="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginTop="@dimen/nav_inner_vertical_margin"
+            android:layout_marginEnd="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginBottom="@dimen/nav_inner_vertical_margin"
+            android:src="@drawable/nav_my_jobs" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_my_jobs_text"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/nav_text_view_size" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/divider_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_divider_height"
+        android:background="@color/nav_divider_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_my_jobs" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/nav_find_jobs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/nav_inner_padding"
+        android:paddingBottom="@dimen/nav_inner_padding"
+        app:layout_constraintBottom_toTopOf="@+id/divider_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1">
+
+        <ImageView
+            android:layout_width="@dimen/nav_image_dimens"
+            android:layout_height="@dimen/nav_image_dimens"
+            android:layout_marginStart="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginTop="@dimen/nav_inner_vertical_margin"
+            android:layout_marginEnd="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginBottom="@dimen/nav_inner_vertical_margin"
+            android:src="@drawable/ic_orange_app" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_find_jobs_text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/nav_text_view_size" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/divider_2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_divider_height"
+        android:background="@drawable/nav_line_divider"
+        app:layout_constraintBottom_toTopOf="@+id/nav_smart_agent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_find_jobs" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/nav_smart_agent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/nav_inner_padding"
+        android:paddingBottom="@dimen/nav_inner_padding"
+        app:layout_constraintBottom_toTopOf="@+id/divider_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_2">
+
+        <ImageView
+            android:layout_width="@dimen/nav_image_dimens"
+            android:layout_height="@dimen/nav_image_dimens"
+            android:layout_marginStart="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginTop="@dimen/nav_inner_vertical_margin"
+            android:layout_marginEnd="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginBottom="@dimen/nav_inner_vertical_margin"
+            android:src="@drawable/nav_smart_agent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_smart_agent_text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/nav_text_view_size" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/divider_3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_divider_height"
+        android:background="@drawable/nav_line_divider"
+        app:layout_constraintBottom_toTopOf="@+id/nav_information"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_smart_agent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/nav_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/nav_inner_padding"
+        android:paddingBottom="@dimen/nav_inner_padding"
+        app:layout_constraintBottom_toTopOf="@+id/divider_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_3">
+
+        <ImageView
+            android:layout_width="@dimen/nav_image_dimens"
+            android:layout_height="@dimen/nav_image_dimens"
+            android:layout_marginStart="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginTop="@dimen/nav_inner_vertical_margin"
+            android:layout_marginEnd="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginBottom="@dimen/nav_inner_vertical_margin"
+            android:src="@drawable/nav_information" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_information_text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/nav_text_view_size" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/divider_4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_divider_height"
+        android:background="@drawable/nav_line_divider"
+        app:layout_constraintBottom_toTopOf="@+id/nav_add_new_job"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_information" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/nav_add_new_job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/nav_inner_padding"
+        android:paddingBottom="@dimen/nav_inner_padding"
+        app:layout_constraintBottom_toTopOf="@+id/divider_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_4">
+
+        <ImageView
+            android:layout_width="@dimen/nav_image_dimens"
+            android:layout_height="@dimen/nav_image_dimens"
+            android:layout_marginStart="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginTop="@dimen/nav_inner_vertical_margin"
+            android:layout_marginEnd="@dimen/nav_inner_horizontal_margin"
+            android:layout_marginBottom="@dimen/nav_inner_vertical_margin"
+            android:src="@drawable/nav_add_new_job" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_add_new_job_text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/nav_text_view_size" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/divider_5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_divider_height"
+        android:background="@drawable/nav_line_divider"
+        app:layout_constraintBottom_toTopOf="@id/nav_open_web_site"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_add_new_job" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/nav_open_web_site"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="@dimen/nav_inner_padding"
+        android:paddingBottom="@dimen/nav_inner_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_5">
+
+        <include layout="@layout/portal_layout" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</com.bpapps.jobimclone.navigation.NavViewCustomConstrainLayout>
