@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true" >
+        android:fitsSystemWindows="true">
 
         <fragment
             android:id="@+id/navigation_view_fragment"

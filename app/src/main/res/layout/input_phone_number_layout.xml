@@ -50,16 +50,16 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayoutPhoneInput"
-            app:layout_constraintBottom_toBottomOf="parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutPhoneInput"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-            <include layout="@layout/digits_layout"/>
+        <include layout="@layout/digits_layout" />
 
-        </FrameLayout>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

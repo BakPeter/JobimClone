@@ -7,6 +7,6 @@
         android:bottomLeftRadius="@dimen/portal_drushim_corner_view_radius"
         android:bottomRightRadius="@dimen/portal_drushim_corner_view_radius"
         android:topLeftRadius="@dimen/portal_drushim_corner_view_radius"
-        android:topRightRadius="@dimen/portal_drushim_corner_view_radius"/>
+        android:topRightRadius="@dimen/portal_drushim_corner_view_radius" />
 
 </shape>

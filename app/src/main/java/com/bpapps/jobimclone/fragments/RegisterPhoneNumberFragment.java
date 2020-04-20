@@ -35,8 +35,6 @@ public class RegisterPhoneNumberFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        requireActivity().getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
-
         View view = inflater.inflate(R.layout.fragment_register_phone_number, container, false);
 
         initViews(view);
@@ -71,7 +69,9 @@ public class RegisterPhoneNumberFragment extends Fragment
     public void onResume() {
         super.onResume();
 
-        ((AppCompatActivity) requireActivity()).getSupportActionBar().hide();
+        AppCompatActivity activity = (AppCompatActivity) requireActivity();
+        activity.getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
+        activity.getSupportActionBar().hide();
 
         if (mCode != null) {
             mTextViewCountryCode.setText(mCode);
@@ -135,14 +135,14 @@ public class RegisterPhoneNumberFragment extends Fragment
             CodeVerificationFragment fragment = CodeVerificationFragment.getInstance
                     (mTextViewPhoneNumber.getHint().toString(), mTextViewCountryCode.getText().toString());
 
-            mPhoneNumberInput = new StringBuilder();
-            mTextViewPhoneNumber.setHint(getResources().getString(R.string.phone_number_hint));
-
             FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
             fragmentManager.beginTransaction()
                     .replace(R.id.fragment_nav_container, fragment)
                     .addToBackStack(CodeVerificationFragment.STACK_TAG)
                     .commit();
+
+            mPhoneNumberInput = new StringBuilder();
+            mTextViewPhoneNumber.setHint(getResources().getString(R.string.phone_number_hint));
         }
     }
 
@@ -151,7 +151,7 @@ public class RegisterPhoneNumberFragment extends Fragment
                 getString(R.string.dialog_register_title),
                 getString(R.string.dialog_register_message),
                 getString(R.string.dialog_register_button_text));
-        dialog.setDialogOnClickListener(new AppAlertDialog.IDialogOnClickListener() {
+        dialog.setDialogOnClickListener(new AppAlertDialog.IDialogButtonOnClickListener() {
             @Override
             public void onClick() {
                 dialog.dismiss();

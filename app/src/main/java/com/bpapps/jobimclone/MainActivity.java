@@ -1,6 +1,7 @@
 package com.bpapps.jobimclone;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -10,8 +11,10 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
-import com.bpapps.jobimclone.fragments.MyDetailsFragment;
+import com.bpapps.jobimclone.fragments.MyJobsFragment;
 import com.bpapps.jobimclone.fragments.SplashScreenFragment;
 import com.bpapps.jobimclone.navigation.NavigationFragment;
 
@@ -20,9 +23,12 @@ public class MainActivity extends AppCompatActivity implements NavigationFragmen
 
     public static final String PREFERENCE_IS_REGISTERED_KEY = PACKAGE_NAME + ".PREFERENCE_IS_REGISTERED_KEY";
     public static final String PREFERENCES_FILE_NAME = PACKAGE_NAME + ".PREFERENCES_FILE_NAME";
+    private static final String TAG = "TAG." + MainActivity.class.getName();
 
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
+
+    FragmentManager mFM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,20 +48,20 @@ public class MainActivity extends AppCompatActivity implements NavigationFragmen
         setSupportActionBar(mToolbar);
 
 
-        mToolbar.findViewById(R.id.image_view_main_action).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mDrawerLayout.openDrawer(GravityCompat.START);
-                mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-
-            }
-        });
+//        mToolbar.findViewById(R.id.image_view_main_action).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mDrawerLayout.openDrawer(GravityCompat.START);
+////                mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+//
+//            }
+//        });
 
         mToolbar.findViewById(R.id.image_view_main_nav).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDrawerLayout.openDrawer(GravityCompat.START);
-                mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+                //   mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
             }
         });
     }
@@ -63,21 +69,34 @@ public class MainActivity extends AppCompatActivity implements NavigationFragmen
     @Override
     protected void onResume() {
         super.onResume();
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_nav_container, SplashScreenFragment.getInstance(), SplashScreenFragment.FRAGMENT_TAG)
+
+        mFM = getSupportFragmentManager();
+        int direction = getWindow().getDecorView().getLayoutDirection();
+        if (direction == View.LAYOUT_DIRECTION_RTL) {
+            Log.d(TAG, "RTL");
+        } else {
+            Log.d(TAG, "LTR");
+        }
+
+        mFM.beginTransaction()
+                .replace(R.id.fragment_nav_container, SplashScreenFragment.getInstance(), SplashScreenFragment.FRAGMENT_TAG)
                 .addToBackStack(SplashScreenFragment.STACK_TAG)
                 .commit();
     }
 
     @Override
     public void onClick(LinearLayoutCompat navClicked) {
+//            Log.d(TAG, "Total fragments : " +fm.getBackStackEntryCount());
+//            for(int entry = 0; entry < fm.getBackStackEntryCount(); entry++){
+//                Log.d(TAG, "Found fragment: " + fm.getBackStackEntryAt(entry).getName());
+
         StringBuilder msg = new StringBuilder();
         switch (navClicked.getId()) {
             case R.id.nav_my_details:
                 msg.append("nav_my_details");
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_nav_container, MyDetailsFragment.getInstance())
-                        .commit();
+//                getSupportFragmentManager().beginTransaction()
+//                        .replace(R.id.fragment_nav_container, MyDetailsFragment.getInstance())
+//                        .commit();
                 break;
             case R.id.nav_notification:
                 msg.append("nav_notification");
@@ -87,9 +106,14 @@ public class MainActivity extends AppCompatActivity implements NavigationFragmen
                 break;
             case R.id.nav_my_jobs:
                 msg.append("nav_my_jobs");
-//                getSupportFragmentManager().beginTransaction()
-//                        .replace(R.id.fragment_container, MyDetailsFragment.getInstance())
-//                        .commit();
+                if (!(mFM.findFragmentById(R.id.fragment_nav_container) instanceof MyJobsFragment)) {
+                    clearBackStack();
+
+                    getSupportFragmentManager().beginTransaction()
+                            .add(R.id.fragment_nav_container, MyJobsFragment.getInstance(), MyJobsFragment.FRAGMENT_TAG)
+                            .addToBackStack(MyJobsFragment.STACK_TAG)
+                            .commit();
+                }
                 break;
             case R.id.nav_find_jobs:
                 msg.append("nav_find_jobs");
@@ -124,6 +148,39 @@ public class MainActivity extends AppCompatActivity implements NavigationFragmen
         }
         Toast.makeText(this, "nav_on_clicked : " + msg.toString(), Toast.LENGTH_SHORT).show();
         mDrawerLayout.closeDrawers();
-        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+
+    }
+
+    private void clearBackStack() {
+        for (int entry = 0; entry < mFM.getBackStackEntryCount(); entry++) {
+            mFM.popBackStack();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Log.d(TAG, "MainActivity::onBackPressed");
+
+        Fragment fragment = mFM.findFragmentById(R.id.search_result_nav_fragment_container);
+        if (fragment != null) {
+            if (fragment instanceof IOnBackPressed) {
+                if (((IOnBackPressed) fragment).onBackPressed()) {
+                    finish();
+                }
+            } else {
+                super.onBackPressed();
+            }
+        }
+
+        super.onBackPressed();
+    }
+
+    public interface IOnBackPressed {
+        /**
+         * If you return true the back press will not be taken into account, otherwise the activity will act naturally
+         *
+         * @return true if your processing has priority if not false
+         */
+        boolean onBackPressed();
     }
 }

@@ -29,7 +29,7 @@
     <color name="terms_chosen_background">@color/colorPrimary</color>
     <color name="terms_policy_not_chosen_text_color">@color/colorPrimary</color>
     <color name="terms_policy_chosen_text_color">@android:color/white</color>
-    <color name="county_item_text_color" >@android:color/black</color>
+    <color name="county_item_text_color">@android:color/black</color>
 
     <color name="digits_underline_digit_pressed">@color/colorPrimary</color>
     <color name="digits_underline_digit_not_pressed">@android:color/darker_gray</color>

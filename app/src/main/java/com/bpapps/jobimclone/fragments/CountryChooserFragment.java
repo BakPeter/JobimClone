@@ -5,12 +5,10 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -29,7 +27,7 @@ import java.util.ArrayList;
  */
 public class CountryChooserFragment extends Fragment implements CountriesAdapter.IOnCountrySelectedListener {
 
-    public static final String STACK_TAG = "STACK_TAG."+CountryChooserFragment.class.getName();
+    public static final String STACK_TAG = "STACK_TAG." + CountryChooserFragment.class.getName();
     private RecyclerView mRecyclerView;
     private CountriesAdapter mAdapter;
 
@@ -85,7 +83,7 @@ public class CountryChooserFragment extends Fragment implements CountriesAdapter
         TypedArray flagIconsIds = resources.obtainTypedArray(R.array.countries_flags_ids);
 
         for (int i = 0; i < names.length; i++) {
-            Country country = new Country(names[i], codes[i],  flagIconsIds.getDrawable(i));
+            Country country = new Country(names[i], codes[i], flagIconsIds.getDrawable(i));
             dataSet.add(country);
         }
 

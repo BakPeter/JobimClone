@@ -284,7 +284,7 @@ public class CodeVerificationFragment extends Fragment
                 title,
                 message,
                 buttonText,
-                new AppAlertDialog.IDialogOnClickListener() {
+                new AppAlertDialog.IDialogButtonOnClickListener() {
                     @Override
                     public void onClick() {
                         AppAlertDialog dialog = (AppAlertDialog) getParentFragmentManager().findFragmentByTag(tag);
@@ -331,7 +331,11 @@ public class CodeVerificationFragment extends Fragment
 //            for(int entry = 0; entry < fm.getBackStackEntryCount(); entry++){
 //                Log.d(TAG, "Found fragment: " + fm.getBackStackEntryAt(entry).getName());
 //            }
-            fm.popBackStackImmediate(SplashScreenFragment.STACK_TAG, 0);
+            fm.popBackStackImmediate(SplashScreenFragment.STACK_TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            fm.beginTransaction()
+                    .replace(R.id.fragment_nav_container, MyJobsFragment.getInstance(), MyJobsFragment.FRAGMENT_TAG)
+                    .addToBackStack(MyJobsFragment.STACK_TAG)
+                    .commit();
         } else {
             showErrorDialog();
         }

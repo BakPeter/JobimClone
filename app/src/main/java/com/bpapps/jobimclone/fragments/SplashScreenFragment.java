@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,12 +29,14 @@ import com.bpapps.jobimclone.dialogs.AppAlertDialog;
 public class SplashScreenFragment extends Fragment implements CheckRegistrationAsyncTask.IOnCheckedRegistrationListener {
     public static final String FRAGMENT_TAG = "FRAGMENT_TAG." + MainActivity.PACKAGE_NAME + "." + SplashScreenFragment.class.getName();
     public static final String STACK_TAG = "STACK_TAG." + SplashScreenFragment.class.getName();
+    private static final String FRAGMENT_DIALOG_PERMISSIONS_RATIONAL = MainActivity.PACKAGE_NAME + ".FRAGMENT_DIALOG_PERMISSIONS_RATIONAL";
 
     private static final int ALL_PERMISSIONS = 1;
     private static final String TAG = "TAG." + SplashScreenFragment.class.getName();
 
     private Boolean mIsRegistered;
     private boolean mArePermissionsGranted;
+    private boolean mOnResumeInvoked = false;
 
     public static SplashScreenFragment getInstance() {
         return new SplashScreenFragment();
@@ -60,14 +63,22 @@ public class SplashScreenFragment extends Fragment implements CheckRegistrationA
         return v;
     }
 
+
     @Override
     public void onResume() {
         super.onResume();
         Log.d(TAG, "onResume");
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
 
-        requestPermissionsForApp();
+        if (!mOnResumeInvoked) {
+            AppCompatActivity activity = (AppCompatActivity) requireActivity();
+            activity.getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
+            activity.getSupportActionBar().hide();
+
+            requestPermissionsForApp();
+
+            mOnResumeInvoked = true;
+        }
     }
 
     private void requestPermissionsForApp() {
@@ -108,19 +119,24 @@ public class SplashScreenFragment extends Fragment implements CheckRegistrationA
     }
 
     private void showPermissionsRational() {
-
         AppAlertDialog dialog = AppAlertDialog.newInstance(
                 getResources().getString(R.string.permission_rational_dialog_title),
                 getResources().getString(R.string.permission_rational_dialog_massage),
                 getResources().getString(R.string.permission_rational_dialog_button_text),
-                new AppAlertDialog.IDialogOnClickListener() {
+                new AppAlertDialog.IDialogButtonOnClickListener() {
                     @Override
                     public void onClick() {
+                        AppAlertDialog dialog = (AppAlertDialog) getParentFragmentManager().findFragmentByTag(FRAGMENT_DIALOG_PERMISSIONS_RATIONAL);
+                        if (dialog != null)
+                            dialog.dismiss();
+
                         askForPermissions();
                     }
                 });
 
-        dialog.show(requireActivity().getSupportFragmentManager(), null);
+        dialog.setCancelable(false);
+
+        dialog.show(requireActivity().getSupportFragmentManager(), FRAGMENT_DIALOG_PERMISSIONS_RATIONAL);
     }
 
     private void askForPermissions() {
@@ -151,7 +167,8 @@ public class SplashScreenFragment extends Fragment implements CheckRegistrationA
                     FragmentManager fm = requireActivity().getSupportFragmentManager();
                     fm.popBackStack();
                     fm.beginTransaction()
-                            .add(R.id.fragment_nav_container, MyJobsFragment.getInstance())
+                            .replace(R.id.fragment_nav_container, MyJobsFragment.getInstance())
+                            .addToBackStack(MyJobsFragment.STACK_TAG)
                             .commit();
                 } else {
                     requireActivity().getSupportFragmentManager()
@@ -161,6 +178,21 @@ public class SplashScreenFragment extends Fragment implements CheckRegistrationA
                             .commit();
                 }
             }
+        }
+    }
+
+    private class PermissionTaskHelper extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+
+            askForPermissions();
         }
     }
 }

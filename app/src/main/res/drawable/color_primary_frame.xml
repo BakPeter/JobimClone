@@ -4,9 +4,8 @@
 
     <solid android:color="@android:color/transparent" />
 
-    <stroke android:width="2dp"  />
-
-    <corners
-        android:radius="@dimen/rational_msg_corner_view_radius" />
+    <stroke
+        android:width="2dp"
+        android:color="@color/colorPrimary" />
 
 </shape>

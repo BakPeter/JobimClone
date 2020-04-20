@@ -78,5 +78,6 @@
     <string name="dialog_code_send_title">קוד נשלח!</string>
     <string name="dialog_code_send_message">קוד חדש נשלח בהצלחה</string>
     <string name="dialog_code_send_button_text">אישור</string>
+    <string name="search_title_text">מציג את כל הג\'ובים סביבי</string>
 
 </resources>

@@ -35,6 +35,7 @@
     <style name="code_verification_text_view_text_color">
         <item name="android:textColor">@android:color/white</item>
     </style>
+
     <style name="code_verification_next_change_number_theme" parent="code_verification_text_view_text_color">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">15sp</item>
@@ -50,5 +51,5 @@
     </style>
 
 
-    <color name="digit_entered" >@color/colorPrimary</color>
+    <color name="digit_entered">@color/colorPrimary</color>
 </resources>

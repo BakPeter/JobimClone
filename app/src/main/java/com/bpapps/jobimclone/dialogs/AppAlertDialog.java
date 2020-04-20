@@ -23,13 +23,13 @@ public class AppAlertDialog extends DialogFragment {
     private String mMessage;
     private String mButtonText;
 
-    private IDialogOnClickListener mDialogOnClickListener;
+    private IDialogButtonOnClickListener mDialogOnClickListener;
 
-    public static AppAlertDialog newInstance(String title, String message, String buttonText, IDialogOnClickListener dialogOnClickListener) {
+    public static AppAlertDialog newInstance(String title, String message, String buttonText, IDialogButtonOnClickListener dialogOnClickListener) {
         return new AppAlertDialog(title, message, buttonText, dialogOnClickListener);
     }
 
-    public AppAlertDialog(String title, String message, String buttonText, IDialogOnClickListener IDialogOnClickListener) {
+    public AppAlertDialog(String title, String message, String buttonText, IDialogButtonOnClickListener IDialogOnClickListener) {
         super();
 
         mTitle = title;
@@ -66,7 +66,7 @@ public class AppAlertDialog extends DialogFragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-          //      AppAlertDialog.this.dismiss();
+                //      AppAlertDialog.this.dismiss();
                 if (mDialogOnClickListener != null)
                     mDialogOnClickListener.onClick();
             }
@@ -83,11 +83,11 @@ public class AppAlertDialog extends DialogFragment {
         return builder.create();
     }
 
-    public void setDialogOnClickListener(IDialogOnClickListener permissionRationalDialogOnClickListener) {
+    public void setDialogOnClickListener(IDialogButtonOnClickListener permissionRationalDialogOnClickListener) {
         mDialogOnClickListener = permissionRationalDialogOnClickListener;
     }
 
-    public interface IDialogOnClickListener {
+    public interface IDialogButtonOnClickListener {
         void onClick();
     }
 }

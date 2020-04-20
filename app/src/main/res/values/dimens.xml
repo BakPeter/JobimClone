@@ -61,5 +61,6 @@
     <dimen name="code_verification_text_views_layout_margins">8dp</dimen>
     <dimen name="msg_send_text_padding_bottom">100dp</dimen>
     <dimen name="layout_start_first_end_fourth_digits">40dp</dimen>
+    <dimen name="jobs_search_icon_dimens">40dp</dimen>
 
 </resources>

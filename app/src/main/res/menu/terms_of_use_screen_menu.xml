@@ -5,6 +5,6 @@
         android:id="@+id/go_back"
         android:title="@string/term_of_menu_item_go_back_title"
         android:icon="@drawable/ic_term_of_use_go_back_menu_item"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
 
 </menu>
