@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/color_primary_frame">
+
+    <ImageView
+        android:id="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="@dimen/jobs_search_icon_dimens"
+        android:layout_height="@dimen/jobs_search_icon_dimens"
+        android:src="@drawable/ic_find_jobs_arrow" />
+
+    <TextView
+        android:id="@+id/text_view_search_option_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="@string/search_title_text"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="@dimen/jobs_search_icon_dimens"
+        android:layout_height="@dimen/jobs_search_icon_dimens"
+        android:src="@drawable/ic_find_jobs_search" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

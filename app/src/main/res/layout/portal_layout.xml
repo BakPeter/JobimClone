@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:background="@drawable/portal_drushim_cornered_view"
+        android:background="@drawable/cornered_color_primary"
         android:text="@string/drushim_text"
         android:textColor="@color/drushim_text_color"
         android:textSize="@dimen/portal_text_size"

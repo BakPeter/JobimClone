@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="jobTypesIconsIds">
+        <item>@drawable/ic_job_type_real_estate_agent</item>
+        <item>@drawable/ic_job_type_driver_helper</item>
+        <item>@drawable/ic_job_type_production_worker</item>
+        <item>@drawable/ic_job_type_barman</item>
+        <item>@drawable/ic_job_type_counter_worker</item>
+        <item>@drawable/ic_job_type_host</item>
+        <item>@drawable/ic_job_type_deliverer</item>
+        <item>@drawable/ic_job_type_cleaner</item>
+        <item>@drawable/ic_job_type_maintenance_man</item>
+        <item>@drawable/ic_job_type_selles_serv_rep</item>
+        <item>@drawable/ic_job_type_seller</item>
+        <item>@drawable/ic_job_type_cook</item>
+        <item>@drawable/ic_job_type_security_guard</item>
+        <item>@drawable/ic_job_type_kitchen_worker</item>
+        <item>@drawable/ic_job_type_petrol_station_worker</item>
+        <item>@drawable/ic_job_type_branch_manager</item>
+        <item>@drawable/ic_job_type_teenager</item>
+        <item>@drawable/ic_job_type_work_from_home</item>
+        <item>@drawable/ic_job_type_hair_dresser</item>
+        <item>@drawable/ic_job_type_desk_worker</item>
+        <item>@drawable/ic_job_type_gardner</item>
+        <item>@drawable/ic_job_type_kindergarten</item>
+        <item>@drawable/ic_job_type_driver</item>
+        <item>@drawable/ic_job_type_head_of_shift</item>
+        <item>@drawable/ic_job_type_selles_attendant</item>
+        <item>@drawable/ic_job_type_cashier</item>
+        <item>@drawable/ic_job_type_usher</item>
+        <item>@drawable/ic_job_type_storekeeper</item>
+        <item>@drawable/ic_job_type_waiter</item>
+    </array>
+
+
+    <string-array name="jobTypesNames">
+        <item>סוכנ/ת נדל"ן</item>
+        <item>עוזר/ת נהג</item>
+        <item>עובד יצור/מלקטים</item>
+        <item>ברמן/ית</item>
+        <item>עובד דלפק</item>
+        <item>מארח/ת</item>
+        <item>שליח/ה</item>
+        <item>עובד/ת ניקיון</item>
+        <item>איש/ת אחזקה</item>
+        <item>נציג/ת שירות ומכירה</item>
+        <item>קופאי</item>
+        <item>סדרן/ית</item>
+        <item>מחסנאי/ת</item>
+        <item>מלצר/ית</item>
+        <item>מוכר/ת בחנות</item>
+        <item>טבח/ית</item>
+        <item>מאבטח/ת</item>
+        <item>עובד/ת מטבח</item>
+        <item>מתדלק/ת</item>
+        <item>מנהל/ת סניף</item>
+        <item>נהג/ת</item>
+        <item>בני נוער</item>
+        <item>עבודה מהבית</item>
+        <item>ספר/ית</item>
+        <item>פקיד קבלה/שירות</item>
+        <item>גנן/חקלאי</item>
+        <item>גננת/סייעת</item>
+        <item>אחראי/ת משמרת</item>
+        <item>דייל מכירה</item>
+    </string-array>
+</resources>

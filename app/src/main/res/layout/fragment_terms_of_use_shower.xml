@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.TermsOfUseShowerFragment">
+    tools:context=".fragments.registarationfragments.termsofuse.TermsOfUseShowerFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/linearLayoutCompat2"
@@ -22,21 +22,23 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/privacy_not_chosen_cornered"
             android:text="@string/privacy_policy_text"
-            android:textColor="@color/terms_policy_not_chosen_text_color"
-            android:textSize="@dimen/terms_options_titles_text_size"
-            android:textStyle="bold" />
+            android:background="@drawable/cornered_taped_button_not_chosen"
+            android:textColor="@color/taped_button_not_chosen_text_color"
+            android:textSize="@dimen/taped_button_titles_text_size"
+            android:textStyle="bold"
+
+            />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_term_of_use"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/terms_chosen_cornered"
             android:text="@string/term_of_use_text"
-            android:textColor="@color/terms_policy_chosen_text_color"
-            android:textSize="@dimen/terms_options_titles_text_size"
+            android:background="@drawable/cornered_terms_chosen"
+            android:textColor="@color/taped_button_chosen_text_color"
+            android:textSize="@dimen/taped_button_titles_text_size"
             android:textStyle="bold" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 

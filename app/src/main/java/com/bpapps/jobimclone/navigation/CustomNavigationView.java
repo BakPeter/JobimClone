@@ -17,7 +17,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class CustomNavigationView extends NavigationView {
     private double mUpperSpacing = 0.15;
-    private double mButtomSpacing = 0.0;
+    private double mBottomSpacing = 0.0;
 
     public CustomNavigationView(@NonNull Context context) {
         super(context);
@@ -76,12 +76,12 @@ public class CustomNavigationView extends NavigationView {
             path.moveTo((int) (width * mUpperSpacing), 0);
             path.lineTo(width, 0);
             path.lineTo(width, height);
-            path.lineTo((int) (width * mButtomSpacing), height);
+            path.lineTo((int) (width * mBottomSpacing), height);
             path.close();
         } else {
             path.moveTo(0, 0);
             path.lineTo((int) (width * (1 - mUpperSpacing)), 0);
-            path.lineTo((int) (width * (1 - mButtomSpacing)), height);
+            path.lineTo((int) (width * (1 - mBottomSpacing)), height);
             path.lineTo(0, height);
             path.close();
         }

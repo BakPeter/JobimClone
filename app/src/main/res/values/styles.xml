@@ -50,6 +50,36 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+    <style name="search_parameters_title_theme">
+        <item name="android:padding">@dimen/search_job_layouts_padding</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
 
-    <color name="digit_entered">@color/colorPrimary</color>
+    <style name="search_parameters_text_view_action_theme" parent="search_parameters_title_theme">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="taped_chosen_theme">
+        <item name="android:textColor">@color/taped_button_chosen_text_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="taped_not_chosen_theme">
+        <item name="android:textColor">@color/taped_button_not_chosen_text_color</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="new_job_filled_out">
+        <item name="background">@color/colorPrimary</item>
+    </style>
+
+    <style name="new_job_not_filled_out">
+        <item name="background">@color/colorPrimary</item>
+    </style>
+
+
+
+
 </resources>

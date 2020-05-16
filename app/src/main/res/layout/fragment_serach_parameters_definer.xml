@@ -1,15 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:drawable/ic_dialog_email"
-    android:gravity="center">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="search parameters"
-        android:textColor="@android:color/holo_blue_light" />
+        android:text="@string/search_parameters_title"
+        android:theme="@style/search_parameters_title_theme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/text_view_action_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="אשר"
+        android:theme="@style/search_parameters_text_view_action_theme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/text_view_action_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="בטל"
+        android:theme="@style/search_parameters_text_view_action_theme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompatSearchTypes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <TextView
+            android:id="@+id/text_view_search_company"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cornered_left_frame_un_taped_search_parmeters"
+            android:padding="@dimen/search_types_padding"
+            android:text="@string/search_type_company_text"
+            android:textAlignment="center"
+            android:textSize="@dimen/search_parameters_options_text_size"
+            android:theme="@style/taped_not_chosen_theme" />
+
+        <TextView
+            android:id="@+id/text_view_search_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/centered_not_cornered_un_taped_frame"
+            android:padding="@dimen/search_types_padding"
+            android:text="@string/search_type_location_text"
+            android:textAlignment="center"
+            android:textSize="@dimen/search_parameters_options_text_size"
+            android:theme="@style/taped_not_chosen_theme" />
+
+
+        <TextView
+            android:id="@+id/text_view_search_jobs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cornered_right_frame_taped_search_parameters"
+            android:padding="@dimen/search_types_padding"
+            android:text="@string/search_type_jpbs_text"
+            android:textAlignment="center"
+            android:textSize="@dimen/search_parameters_options_text_size"
+            android:theme="@style/taped_chosen_theme" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/search_job_frame_color"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompatSearchTypes">
+
+        <SearchView
+            android:id="@+id/search_view_jobs_params_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cornered_search_frame"
+            android:queryHint="מצא ג'וב" />
+    </FrameLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager_search_type"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

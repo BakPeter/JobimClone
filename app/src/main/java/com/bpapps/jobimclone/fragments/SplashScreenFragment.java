@@ -22,6 +22,8 @@ import com.bpapps.jobimclone.MainActivity;
 import com.bpapps.jobimclone.R;
 import com.bpapps.jobimclone.asyncktasks.CheckRegistrationAsyncTask;
 import com.bpapps.jobimclone.dialogs.AppAlertDialog;
+import com.bpapps.jobimclone.fragments.myjobsfragments.FindJobsInList;
+import com.bpapps.jobimclone.fragments.registarationfragments.RegisterPhoneNumberFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -85,11 +87,13 @@ public class SplashScreenFragment extends Fragment implements CheckRegistrationA
         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 || ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED
                 || ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                || ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
                     || ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), Manifest.permission.READ_CONTACTS)
                     || ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), Manifest.permission.CALL_PHONE)
-                    || ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                    || ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), Manifest.permission.READ_EXTERNAL_STORAGE)
+                    || ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), Manifest.permission.CAMERA)) {
 
                 showPermissionsRational();
             } else {
@@ -111,7 +115,7 @@ public class SplashScreenFragment extends Fragment implements CheckRegistrationA
                 }
             }
 
-            if (grantedResultsCount == 4) {
+            if (grantedResultsCount == 5) {
                 mArePermissionsGranted = true;
                 navigateToNextScreen();
             }
@@ -143,7 +147,8 @@ public class SplashScreenFragment extends Fragment implements CheckRegistrationA
         requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
                         Manifest.permission.READ_CONTACTS,
                         Manifest.permission.CALL_PHONE,
-                        Manifest.permission.READ_EXTERNAL_STORAGE},
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.CAMERA},
                 ALL_PERMISSIONS);
     }
 
@@ -165,15 +170,15 @@ public class SplashScreenFragment extends Fragment implements CheckRegistrationA
             if (mIsRegistered != null) {
                 if (mIsRegistered) {
                     FragmentManager fm = requireActivity().getSupportFragmentManager();
-                    fm.popBackStack();
+                    fm.popBackStack(SplashScreenFragment.STACK_TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                     fm.beginTransaction()
-                            .replace(R.id.fragment_nav_container, MyJobsFragment.getInstance())
-                            .addToBackStack(MyJobsFragment.STACK_TAG)
+                            .replace(R.id.app_main_fragment_nav_container, FindJobsInList.getInstance(), FindJobsInList.FRAGMENT_TAG)
+                            .addToBackStack(FindJobsInList.STACK_TAG)
                             .commit();
                 } else {
                     requireActivity().getSupportFragmentManager()
                             .beginTransaction()
-                            .add(R.id.fragment_nav_container, RegisterPhoneNumberFragment.getInstance(), FRAGMENT_TAG)
+                            .add(R.id.app_main_fragment_nav_container, RegisterPhoneNumberFragment.getInstance(), FRAGMENT_TAG)
                             .addToBackStack(RegisterPhoneNumberFragment.STACK_TAG)
                             .commit();
                 }

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/cornered_view">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:background="@drawable/cornered_black_frame"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvClose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="X"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="פרסם ג'וב חדש"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvClose" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="10dp"
+                android:text="לפניכם 5 שלבים פשוטים כדי שתוכלו ליצור'\n' ג'וב חדש ולמצוא את העובד הבא'\n'שלכם בלי מאמץ."
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="10dp"
+                android:text="שאלות או בעיות בנוגע ליצירת ג'וב חדש?'\n'אנחנו פה בשבילכם... דברו איתנו!"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/ibHelpMail"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_color_primary_filled"
+                android:src="@drawable/ic_new_job_help_email"
+                app:layout_constraintEnd_toStartOf="@+id/ibHelpPhone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView4" />
+
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/ibHelpPhone"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_color_primary_filled"
+                android:src="@drawable/ic_new_job_help_phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ibHelpMail"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView4" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNewJobHelpMail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="שלח מייל"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/tvNewJobHelpPhone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ibHelpMail" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNewJobHelpPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="התקשר"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvNewJobHelpMail"
+                app:layout_constraintTop_toBottomOf="@+id/ibHelpPhone" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:text="שעות הפעילות : א-ה, 9:00-18:00"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNewJobHelpMail" />
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/dialog_pic" />
+</LinearLayout>

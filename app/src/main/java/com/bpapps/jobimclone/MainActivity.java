@@ -1,11 +1,13 @@
 package com.bpapps.jobimclone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.appcompat.widget.Toolbar;
@@ -14,8 +16,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.bpapps.jobimclone.fragments.MyJobsFragment;
 import com.bpapps.jobimclone.fragments.SplashScreenFragment;
+import com.bpapps.jobimclone.fragments.addnewjob.AddNewJobFragment;
+import com.bpapps.jobimclone.fragments.addnewjob.NewJobPicAttachmentFragment;
 import com.bpapps.jobimclone.navigation.NavigationFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationFragment.IOnNavClickedListener {
@@ -47,16 +50,6 @@ public class MainActivity extends AppCompatActivity implements NavigationFragmen
         mToolbar.addView(toolBarView, layoutParams);
         setSupportActionBar(mToolbar);
 
-
-//        mToolbar.findViewById(R.id.image_view_main_action).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mDrawerLayout.openDrawer(GravityCompat.START);
-////                mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-//
-//            }
-//        });
-
         mToolbar.findViewById(R.id.image_view_main_nav).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,18 +64,13 @@ public class MainActivity extends AppCompatActivity implements NavigationFragmen
         super.onResume();
 
         mFM = getSupportFragmentManager();
-        int direction = getWindow().getDecorView().getLayoutDirection();
-        if (direction == View.LAYOUT_DIRECTION_RTL) {
-            Log.d(TAG, "RTL");
-        } else {
-            Log.d(TAG, "LTR");
-        }
 
         mFM.beginTransaction()
-                .replace(R.id.fragment_nav_container, SplashScreenFragment.getInstance(), SplashScreenFragment.FRAGMENT_TAG)
+                .replace(R.id.app_main_fragment_nav_container, SplashScreenFragment.getInstance(), SplashScreenFragment.FRAGMENT_TAG)
                 .addToBackStack(SplashScreenFragment.STACK_TAG)
                 .commit();
     }
+
 
     @Override
     public void onClick(LinearLayoutCompat navClicked) {
@@ -106,14 +94,14 @@ public class MainActivity extends AppCompatActivity implements NavigationFragmen
                 break;
             case R.id.nav_my_jobs:
                 msg.append("nav_my_jobs");
-                if (!(mFM.findFragmentById(R.id.fragment_nav_container) instanceof MyJobsFragment)) {
-                    clearBackStack();
-
-                    getSupportFragmentManager().beginTransaction()
-                            .add(R.id.fragment_nav_container, MyJobsFragment.getInstance(), MyJobsFragment.FRAGMENT_TAG)
-                            .addToBackStack(MyJobsFragment.STACK_TAG)
-                            .commit();
-                }
+//                if (!(mFM.findFragmentById(R.id.fragment_nav_container) instanceof MyJobsShowInListFragment)) {
+//                    clearBackStack();
+//
+//                    getSupportFragmentManager().beginTransaction()
+//                            .add(R.id.fragment_nav_container, MyJobsShowInListFragment.getInstance(), MyJobsShowInListFragment.FRAGMENT_TAG)
+//                            .addToBackStack(MyJobsShowInListFragment.STACK_TAG)
+//                            .commit();
+//                }
                 break;
             case R.id.nav_find_jobs:
                 msg.append("nav_find_jobs");
@@ -135,9 +123,10 @@ public class MainActivity extends AppCompatActivity implements NavigationFragmen
                 break;
             case R.id.nav_add_new_job:
                 msg.append("nav_add_new_job");
-//                getSupportFragmentManager().beginTransaction()
-//                        .replace(R.id.fragment_container, MyDetailsFragment.getInstance())
-//                        .commit();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.app_main_fragment_nav_container, AddNewJobFragment.getInstance())
+                        .addToBackStack(AddNewJobFragment.STACK_TAG)
+                        .commit();
                 break;
             case R.id.nav_open_web_site:
                 msg.append("nav_open_web_site");
@@ -151,24 +140,16 @@ public class MainActivity extends AppCompatActivity implements NavigationFragmen
 
     }
 
-    private void clearBackStack() {
-        for (int entry = 0; entry < mFM.getBackStackEntryCount(); entry++) {
-            mFM.popBackStack();
-        }
-    }
-
     @Override
     public void onBackPressed() {
         Log.d(TAG, "MainActivity::onBackPressed");
 
-        Fragment fragment = mFM.findFragmentById(R.id.search_result_nav_fragment_container);
+        Fragment fragment = mFM.findFragmentById(R.id.app_main_fragment_nav_container);
         if (fragment != null) {
             if (fragment instanceof IOnBackPressed) {
                 if (((IOnBackPressed) fragment).onBackPressed()) {
                     finish();
                 }
-            } else {
-                super.onBackPressed();
             }
         }
 

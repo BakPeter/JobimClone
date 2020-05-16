@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.addnewjob.NewJobCompanyDetailsFragment">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:paddingLeft="32dp"
+        android:paddingTop="16dp"
+        android:paddingRight="32dp"
+        android:paddingBottom="16dp"
+        android:text="אנא מלאו את הפרטים הבאים כדי ליצור ג'וב חדש"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextCompanyName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/new_job_company_details_focused"
+        android:hint="שם החברה"
+        android:textDirection="rtl"
+        android:inputType="text"
+        android:paddingLeft="8dp"
+        android:paddingTop="24dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextBranchName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/new_job_company_details_not_focused"
+        android:hint="שם הסניף(לא חובה)"
+        android:textDirection="rtl"
+        android:inputType="text"
+        android:paddingLeft="8dp"
+        android:paddingTop="24dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCompanyName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNewJobHelp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/new_job_help_frame"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="צריכים עזרה?"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBranchName"
+        app:layout_constraintVertical_bias="0.361" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/new_job_pic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNewJobHelp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

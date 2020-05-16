@@ -79,5 +79,10 @@
     <string name="dialog_code_send_message">קוד חדש נשלח בהצלחה</string>
     <string name="dialog_code_send_button_text">אישור</string>
     <string name="search_title_text">מציג את כל הג\'ובים סביבי</string>
+    <string name="search_parameters_title">הצג לפי</string>
+    <string name="search_type_company_text">חברה</string>
+    <string name="search_type_jpbs_text">ג\'וב</string>
+    <string name="search_type_location_text">מיקום</string>
+    <string name="add_new_job_tool_bar_title">פרסם ג\'וב חדש</string>
 
 </resources>

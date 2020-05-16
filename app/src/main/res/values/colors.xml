@@ -25,13 +25,23 @@
     <color name="permission_rational_dialog_massage_text_color">@android:color/black</color>
     <color name="permission_rational_dialog_button_text_color">@color/colorPrimary</color>
 
-    <color name="terms_not_chosen_background">@android:color/white</color>
-    <color name="terms_chosen_background">@color/colorPrimary</color>
-    <color name="terms_policy_not_chosen_text_color">@color/colorPrimary</color>
-    <color name="terms_policy_chosen_text_color">@android:color/white</color>
+    <color name="taped_not_chosen_background">@android:color/white</color>
+    <color name="taped_chosen_background">@color/colorPrimary</color>
+    <color name="taped_button_not_chosen_text_color">@color/colorPrimary</color>
+    <color name="taped_button_chosen_text_color">@android:color/white</color>
     <color name="county_item_text_color">@android:color/black</color>
 
     <color name="digits_underline_digit_pressed">@color/colorPrimary</color>
     <color name="digits_underline_digit_not_pressed">@android:color/darker_gray</color>
+    <color name="search_parameters_action_bar_color">@android:color/black</color>
 
+    <color name="digit_entered">@color/colorPrimary</color>
+
+    <color name="search_job_frame_color">#D5D2D2</color>
+    <color name="search_job_background_color">@android:color/white</color>
+
+    <color name="new_job_filled_out">@color/colorPrimary</color>
+    <color name="new_job_not_filled_out">#f2ac7c</color>
+    <color name="new_job_company_details_background">#d9e1e5</color>
+    <color name="new_job_bad_address">#D31A1A</color>
 </resources>

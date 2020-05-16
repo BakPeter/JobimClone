@@ -59,7 +59,7 @@ public class AppAlertDialog extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
 
         LayoutInflater inflater = requireActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.app_dialog_custom_layout, null);
+        View view = inflater.inflate(R.layout.dialog_app_dialog_custom_layout, null);
 
         Button button = view.findViewById(R.id.button_dialog);
         button.setText(mButtonText);

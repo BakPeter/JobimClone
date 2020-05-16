@@ -46,7 +46,7 @@
     <dimen name="permission_rational_dialog_title_text_size">20sp</dimen>
     <dimen name="permission_rational_dialog_massage_layout_margins">16dp</dimen>
     <dimen name="permission_rational_dialog_title_layout_top_margins">16dp</dimen>
-    <dimen name="terms_options_titles_text_size">15sp</dimen>
+    <dimen name="taped_button_titles_text_size">15sp</dimen>
     <dimen name="terms_corners_radius">8dp</dimen>
     <dimen name="terms_stroke_size">2dp</dimen>
     <dimen name="terms_title_text_size">30sp</dimen>
@@ -62,5 +62,10 @@
     <dimen name="msg_send_text_padding_bottom">100dp</dimen>
     <dimen name="layout_start_first_end_fourth_digits">40dp</dimen>
     <dimen name="jobs_search_icon_dimens">40dp</dimen>
-
+    <dimen name="my_jobs_layouts_margins">8dp</dimen>
+    <dimen name="search_parameters_text_view_padding">8dp</dimen>
+    <dimen name="search_job_layouts_padding">8dp</dimen>
+    <dimen name="search_types_padding">8dp</dimen>
+    <dimen name="search_parameters_options_text_size">20sp</dimen>
+    <dimen name="new_job_company_details_radius_dimen">8dp</dimen>
 </resources>
